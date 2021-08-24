@@ -18,7 +18,7 @@
                 Manage Admin
             </h3>
 
-            <a class="btn btn-primary" href="#" role="button">Add Admin</a>
+            <a class="btn btn-primary" href="add-admin.php" role="button">Add Admin</a>
 
             <div class='row'>
                     <div class='col-md-12 table-manage'>
