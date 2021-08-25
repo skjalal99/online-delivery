@@ -14,6 +14,24 @@
     <!-- breadcrumb ends -->
     <!-- main starts -->
      <div class='container main-cont'>
+
+    <?php
+    if(isset($_SESSION['addadmin'])){
+
+        echo '<div class="alert alert-success" role="alert">'.$_SESSION['addadmin'].'</div>';
+    
+    }
+    else
+    {
+        echo '<div class="alert alert-warning" role="alert">'.$_SESSION['unsuccess'].'</div>';
+
+
+    }
+    
+    ?>
+
+
+
             <h3>
                 Manage Admin
             </h3>

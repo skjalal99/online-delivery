@@ -14,3 +14,4 @@
     <title>Hello, world!</title>
   </head>
   <body>
+    <?php include('../admin/config/conn.php');?>
