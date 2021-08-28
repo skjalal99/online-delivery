@@ -27,6 +27,8 @@
 
 
 
+
+
             <h3>
                 Manage Admin
             </h3>
@@ -46,24 +48,75 @@
                             </thead>
                             <tbody>
 
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Mark</td>
-                                    <td>Otto</td>
+                            <?php
+
+                            //query to get data from db
+
+                            $sql = "select * from tbl_admin";
+
+                            // Execution
+
+                            $res = mysqli_query($conn, $sql);
+
+                            //to check query executed:
+
+                            if($res == TRUE){
+
+                            // count rows  to check data available in db:
+
+                            $count = mysqli_num_rows($res); // this function will get all row from db
+
+                            $sno = 1;
+
+                            if($count>0){
+
+                                //we have data in db:
+
+                                while($rows=mysqli_fetch_assoc($res)){
+                            
+                                //while loop will run as long as data runs in loop:
+
+                                //Get individual data
+                             
+                                    $id = $rows['id']; 
+                                    $full_name = $rows['full_name']; 
+                                    $user_name = $rows['user_name']; 
+                                    
+
+                                //To Display the value:
+
+                             ?>   
+                             
+                            <tr>
+                                    <th scope="row"><?php echo $sno++.'.';?></th>
+                                    <td><?php echo $full_name;?></td>
+                                    <td><?php echo $user_name;?></td>
                                     <td>
                                         <a class="btn btn-success" href="#" role="button">Update</a>
                                         <a class="btn btn-danger" href="#" role="button">Delete</a>
                                     </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">2</th>
-                                    <td>Mark</td>
-                                    <td>Otto</td>
-                                    <td>
-                                        <a class="btn btn-success" href="#" role="button">Update</a>
-                                        <a class="btn btn-danger" href="#" role="button">Delete</a>
-                                    </td>
-                                </tr>
+                            </tr>
+
+
+
+
+                             <?php
+
+                                } // end of while loop:
+                            
+                                } //end of if count:
+
+                            else{
+
+                                 }
+
+                            } // end of if res:
+
+
+                            ?>
+
+
+                                
                                 
                             </tbody>
                         </table>
