@@ -18,8 +18,17 @@
     <?php
     if(isset($_SESSION['addadmin'])){
 
-        echo '<div class="alert alert-success" role="alert">'.$_SESSION['addadmin'].'</div>';
+        echo '<div class="alert alert-success" role="alert">'.$_SESSION['admin-del'].'</div>';
         unset($_SESSION['addadmin']);
+    
+    }
+
+// Delete admin session msg 
+
+    if(isset($_SESSION['admin-del'])){
+
+        echo '<div class="alert alert-success" role="alert">'.$_SESSION['admin-del'].'</div>';
+        unset($_SESSION['admin-del']);
     
     }
     
@@ -93,7 +102,7 @@
                                     <td><?php echo $user_name;?></td>
                                     <td>
                                         <a class="btn btn-success" href="#" role="button">Update</a>
-                                        <a class="btn btn-danger" href="#" role="button">Delete</a>
+                                        <a class="btn btn-danger" href="<?php echo SITE_URL;?>/admin/del-admin.php?id=<?php echo $id?>" role="button">Delete</a>
                                     </td>
                             </tr>
 
