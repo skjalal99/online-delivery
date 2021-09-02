@@ -101,7 +101,7 @@
                                     <td><?php echo $full_name;?></td>
                                     <td><?php echo $user_name;?></td>
                                     <td>
-                                        <a class="btn btn-success" href="#" role="button">Update</a>
+                                        <a class="btn btn-success" href="<?php echo SITE_URL;?>/admin/update-admin.php?id=<?php echo $id ?>" role="button">Update</a>
                                         <a class="btn btn-danger" href="<?php echo SITE_URL;?>/admin/del-admin.php?id=<?php echo $id?>" role="button">Delete</a>
                                     </td>
                             </tr>
