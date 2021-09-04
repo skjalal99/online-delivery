@@ -50,13 +50,13 @@ if($count==1){
 
     $row = mysqli_fetch_assoc($res);
 
-   echo $full_name = $row['full_name'];
-    echo $user_name = $row['user_name'];
+  $full_name = $row['full_name'];
+  $user_name = $row['user_name'];
 
 }
 else{
 
-    header('location:'.SITE_URL.'admin/manage-admin.php');
+    header('location:'.SITE_URL.'/admin/manage-admin.php');
 
 }
 }
@@ -95,7 +95,38 @@ else{
   </div>
 </div>
 
+<?php
+if(isset($_POST['update_submit']))
+{
+echo $Full_name = $_POST['Full_name'];
+echo $User_name = $_POST['User_name'];
+$id = $_POST['id'];
 
+$sql = "UPDATE tbl_admin SET 
+full_name = '$Full_name', 
+user_name = '$User_name'
+where id = '$id'";
+
+$res =  mysqli_query($conn, $sql)   or die(mysqli_error());
+
+if($res == True){
+
+
+  $_SESSION['update-admin'] = "User updated successfully";
+  header('location:'.SITE_URL.'/admin/manage-admin.php');
+}
+else{
+  $_SESSION['update-admin'] = "User unable to update";
+  header('location:'.SITE_URL.'/admin/manage-admin.php');
+
+}
+
+
+
+}
+
+
+?>
 
 
 

@@ -31,6 +31,18 @@
         unset($_SESSION['admin-del']);
     
     }
+
+
+    // update admin session msg
+
+    if(isset($_SESSION['update-admin'])){
+
+        echo '<div class="alert alert-success" role="alert">'.$_SESSION['update-admin'].'</div>';
+        unset($_SESSION['update-admin']);
+    
+    }
+
+
     
     ?>
 
