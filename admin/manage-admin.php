@@ -18,12 +18,12 @@
     <?php
     if(isset($_SESSION['addadmin'])){
 
-        echo '<div class="alert alert-success" role="alert">'.$_SESSION['admin-del'].'</div>';
+        echo '<div class="alert alert-success" role="alert">'.$_SESSION['addadmin'].'</div>';
         unset($_SESSION['addadmin']);
     
     }
 
-// Delete admin session msg 
+    // Delete admin session msg 
 
     if(isset($_SESSION['admin-del'])){
 
@@ -41,8 +41,30 @@
         unset($_SESSION['update-admin']);
     
     }
+    // Password change admin session msg
 
+    if(isset( $_SESSION['user-not-found'])){
 
+        echo '<div class="alert alert-success" role="alert">'.$_SESSION['user-not-found'].'</div>';
+        unset($_SESSION['user-not-found']);
+
+    }
+    // Password change admin session msg
+
+    if(isset($_SESSION['pass-not-match'])){
+
+        echo '<div class="alert alert-success" role="alert">'.$_SESSION['pass-not-match'].'</div>';
+        unset($_SESSION['pass-not-match']);
+
+    }
+    // Password change admin session msg
+
+    if(isset($_SESSION['Pass-changed'])){
+
+        echo '<div class="alert alert-success" role="alert">'.$_SESSION['Pass-changed'].'</div>';
+        unset($_SESSION['Pass-changed']);
+
+    }
     
     ?>
 
@@ -113,6 +135,7 @@
                                     <td><?php echo $full_name;?></td>
                                     <td><?php echo $user_name;?></td>
                                     <td>
+                                        <a class="btn btn-primary" href="<?php echo SITE_URL;?>/admin/change1.php?id=<?php echo $id ?>" role="button">Change Password</a>
                                         <a class="btn btn-success" href="<?php echo SITE_URL;?>/admin/update-admin.php?id=<?php echo $id ?>" role="button">Update</a>
                                         <a class="btn btn-danger" href="<?php echo SITE_URL;?>/admin/del-admin.php?id=<?php echo $id?>" role="button">Delete</a>
                                     </td>

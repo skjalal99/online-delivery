@@ -1,6 +1,6 @@
 <?php
 //Session Starts
-
+ob_start();
 session_start();
 
 

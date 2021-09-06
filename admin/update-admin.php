@@ -116,6 +116,7 @@ if($res == True){
   header('location:'.SITE_URL.'/admin/manage-admin.php');
 }
 else{
+  
   $_SESSION['update-admin'] = "User unable to update";
   header('location:'.SITE_URL.'/admin/manage-admin.php');
 
