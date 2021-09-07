@@ -38,3 +38,22 @@ margin:10px 20px;
     padding:10px;
     width:100%;
 }
+.login-container1{
+    margin-top: 5%;
+    margin-bottom: 15%;
+}
+.login-form{
+    padding: 5%;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+}
+.login-form h3{
+    text-align: center;
+    color: #333;
+}
+
+.login-container1 form{
+    padding: 10%;
+}
+
+
+

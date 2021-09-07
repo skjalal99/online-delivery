@@ -1,4 +1,11 @@
+<?php
+    if(isset($_SESSION['login'])){
 
+        echo '<div class="alert alert-success" role="alert">'.$_SESSION['login'].'</div>';
+        unset($_SESSION['login']);
+    
+    }
+?>
       
     <!-- breadcrumb ends -->
     <div class='container'>
@@ -8,9 +15,20 @@
             <li class="breadcrumb-item active" aria-current="page">Library</li>
         </ol>
         </div>
+
+        
     <!-- breadcrumb ends -->
     <!-- main starts -->
         <div class='container main-cont'>
+        <?php
+            if(isset($_SESSION['login'])){
+
+                echo '<div class="alert alert-success" role="alert">'.$_SESSION['login'].'</div>';
+                unset($_SESSION['login']);
+            
+            }
+        ?>
+
             <h3>
                 Dashboard
                 <small class="text-muted">(Online Food Delivery)</small>

@@ -1,5 +1,5 @@
 <!-- Nav-menu start -->
-
+<?php include('../admin/includes/logincheck.php');?>
      
 <nav class="navbar navbar-expand-sm bg-dark  justify-content-center">
      
@@ -28,6 +28,9 @@
                      </li>
                      <li class="nav-item">
                      <a class="nav-link" href="manage-order.php">Order</a>
+                     </li>
+                     <li class="nav-item">
+                     <a class="nav-link" href="logout.php">Logout</a>
                      </li>
                  </ul>
                  
