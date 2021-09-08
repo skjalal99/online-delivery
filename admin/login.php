@@ -63,7 +63,7 @@ $res = mysqli_query($conn, $sql) or die(mysqli_error());
         
         // Session set for login Message:
         
-        $_SESSION['login'] =  "<div class='alert alert-warning text-center' role='alert'>You are successfully logged in </div>";
+        $_SESSION['login'] =  "<div class='alert alert-success text-center' role='alert'>You are successfully logged in </div>";
 
         // Session set for user session:
 
