@@ -23,7 +23,7 @@
         <?php
             if(isset($_SESSION['login'])){
 
-                echo '<div class="alert alert-success" role="alert">'.$_SESSION['login'].'</div>';
+                echo $_SESSION['login'];
                 unset($_SESSION['login']);
             
             }
