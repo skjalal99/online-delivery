@@ -45,6 +45,21 @@
                 unset($_SESSION['upload-failed']);
             
             }
+            if(isset($_SESSION['update-cat']))
+            {
+
+                echo $_SESSION['update-cat'];
+                unset($_SESSION['update-cat']);
+            
+            }
+            if(isset($_SESSION['category-del']))
+            {
+
+                echo $_SESSION['category-del'];
+                unset($_SESSION['category-del']);
+            
+            }
+            
     ?>
 
 
@@ -96,25 +111,25 @@
 
                                     <tr>
                                         
-                                        <th scope="row"><?php echo $sno++;?></th>
+                                        <td scope="row"><?php echo $sno++;?></td>
                                         <td><?php echo $title;?></td>
 
                                         <?php
-                                            if($image_name!="")
+                                           if($image_name!="")
                                             {
 
 
                                          ?>
                                             
                                             
-                                           <td><img src="<?php echo SITE_URL;?>/admin/assets/images/category/<?php echo $image_name;?>" width="100" height="100"></td>
+                                        <td><img src="<?php echo SITE_URL;?>/admin/assets/images/category/<?php echo $image_name;?>" width="100" height="100"></td>
                                          
-                                         <?php
+                                        <?php
 
                                             }
                                             else
                                             {
-                                         ?>
+                                        ?>
                                            <td><span>No Image</span></td>
                                       
                                         <?php
@@ -128,13 +143,11 @@
                                       <td><?php echo $featured;?></td>
                                         <td><?php echo $active;?></td>
                                         <td>
+                                           
                                             <a class="btn btn-success" href="<?php echo SITE_URL;?>/admin/update-category.php?id=<?php echo $id?>" role="button">Update</a>
-                                            <a class="btn btn-danger" href="<?php echo SITE_URL;?>/admin/delete-category.php?id=<?php echo $id?>" role="button">Delete</a>
+                                            <a class="btn btn-danger" href="<?php echo SITE_URL;?>/admin/delete-category.php?id=<?php echo $id;?>&img=<?php echo $image_name;?>" role="button">Delete</a>
                                         </td>
                                     </tr>
-                                  
-                            
-
 
 
         <?php
@@ -144,11 +157,12 @@
                     }
                      else
                     {
-
-                            echo "No Data";
+        ?>
+                        <td colspan='4'class="text-center"><span><b>NO DATA TO DISPLAY !</b></span></td>
+        <?php
                     }
                     
-
+ 
                 }
                 
                 

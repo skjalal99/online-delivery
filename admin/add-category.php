@@ -154,7 +154,7 @@ if(isset($_POST['add_cat']))
 
               }
 
-              echo "hhhhhhhhhhhh";
+             
                           
             }
 
