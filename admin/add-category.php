@@ -149,8 +149,8 @@ if(isset($_POST['add_cat']))
                 $_SESSION['upload-error'] = "<div class='alert alert-warning text-center' role='alert'>Error: Uploading failed</div>";
 
                 header('location:'.SITE_URL.'/admin/manage-category.php');
-
-              //  die();
+                
+                die();
 
               }
 
