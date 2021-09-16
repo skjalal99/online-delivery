@@ -24,7 +24,7 @@
             }
             if(isset($_SESSION['update-food']))
             {
-
+            
                 echo $_SESSION['update-food'];
                 unset($_SESSION['update-food']);
             
@@ -36,6 +36,14 @@
                 unset($_SESSION['upload-food-error']);
             
             }
+            if(isset($_SESSION['food-del']))
+            {
+
+                echo $_SESSION['food-del'];
+                unset($_SESSION['food-del']);
+            
+            }
+            
     ?>
 
             <h3>
@@ -53,7 +61,7 @@
                                 <th scope="col">Title</th>
                                 <th scope="col">Description</th>
                                 <th scope="col">Price</th>
-                                <th scope="col">Image Name</th>
+                                <th scope="col">Image</th>
                                 <th scope="col">Category</th>
                                 <th scope="col">Featured</th>
                                 <th scope="col">Active</th>
@@ -67,18 +75,20 @@
                     
                   
                     $sql1 =  "SELECT a.id, a.title as f_title,a.descriptn,a.price,a.img_name,a.featured,a.active,b.title as category FROM tbl_food a INNER JOIN tbl_category b ON a.category_id=b.id";
-                    //$sql1 =  "SELECT * from food_cat";
+                    //$sql1 =  "SELECT * from tbl_food";
 
                     $res1 = mysqli_query($conn, $sql1) or die(mysqli_error());
 
+
                     if($res1 == TRUE)
                     {
-                        $count1 = mysqli_num_rows($res1) or die(mysqli_error());
-                  
+                        
+                        $count1 = mysqli_num_rows($res1);
+                        
 
                         if($count1>0)
                         {
-
+                         
                             $sno = 1;
 
                             while($row1=mysqli_fetch_assoc($res1))
@@ -126,8 +136,8 @@
                                 <td scope="row"><?php echo $featured;?></td>
                                 <td scope="row"><?php echo $active;?></td>
                                 <td>
-                                        <a class="btn btn-success" href="<?php echo SITE_URL;?>/admin/update-food.php?id=<?php echo $id;?> " role="button">Update</a>
-                                        <a class="btn btn-danger" href="<?php echo SITE_URL;?>/admin/delete-food.php " role="button">Delete</a>
+                                        <a class="btn btn-success" href="<?php echo SITE_URL;?>/admin/update-food.php?id=<?php echo $id;?>" role="button">Update</a>
+                                        <a class="btn btn-danger" href="<?php echo SITE_URL;?>/admin/delete-food.php?id=<?php echo $id;?>&img=<?php echo $image;?>" role="button">Delete</a>
                                 </td>
                             </tr>
                             <?php
@@ -135,14 +145,26 @@
                             }
 
                         }
+
+                        else
+                        {
+                ?>
+
+                            <td scope="row" colspan='4'><?php echo "No Data Available";?></td>
+                          
+                <?php
+                        }
+                       
+
                     }
+
+                    
+                   
                     
                     
                     ?>
-
-                                
-                                   
-                                
+                    
+            
                                 
                             </tbody>
                         </table>
