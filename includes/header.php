@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <?php include('admin/config/conn.php');?>
+<?php include('admin/config/functions.php');?>
 
     
 <body>

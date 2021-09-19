@@ -16,4 +16,5 @@
   </head>
   <body>
     <?php include('../admin/config/conn.php');?>
+    <?php include('../admin/config/functions.php');?>
     
