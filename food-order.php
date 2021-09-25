@@ -46,7 +46,7 @@ if(isset($_POST['order-submit']))
    customer_email = '$customer_email',
    customer_address = '$customer_address'" ;
 
-   $sql2 = "SELECT * FROM tbl_food";
+  
 
    echo $sql1;
 

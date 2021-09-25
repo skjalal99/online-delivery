@@ -17,7 +17,22 @@
             <h3>
                 Manage Order
             </h3>
+            <?php
+            if(isset($_SESSION['update-order']))
+            {
 
+                echo $_SESSION['update-order'];
+                unset($_SESSION['update-order']);
+            
+            }
+            if(isset($_SESSION['order-del']))
+            {
+
+                echo $_SESSION['order-del'];
+                unset($_SESSION['order-del']);
+            
+            }
+            ?>
  
 
             <div class='row'>
@@ -27,7 +42,7 @@
                                 <tr>
                                 <th scope="col">S.NO</th>
                                 <th scope="col">Food Name</th>
-                                <th scope="col" colspan="2">Date</th>
+                                <th scope="col" >Date</th>
                                 <th scope="col">Customer Name</th>
                                 <th scope="col">Customer Mobile</th>
                                 <th scope="col">customer Address</th>
@@ -57,6 +72,7 @@
                                             while($row = mysqli_fetch_assoc($res))
                                             {
 
+                                                $id = $row['id'];
                                                 $food = $row['food'];
                                                 $price = $row['price'];
                                                 $qty   = $row['qty'];
@@ -65,7 +81,7 @@
                                                 $status   = $row['status'];
                                                 $customer_name   = $row['customer_name'];
                                                 $customer_contact   = $row['customer_contact'];
-                                                $customer_email   = $row['customer_email'];
+                                                $customer_email1   = $row['customer_email'];
                                                 $customer_address   = $row['customer_address'];
 
                                    
@@ -73,19 +89,19 @@
                                 <tr>
                                     <td scope="row"><?php echo $sno++;?></td>
                                     <td><?php echo $food;?></td>
-                                    <td colspan="2"><?php echo $order_date;?></td>
+                                    <td ><?php echo $order_date;?></td>
                                     <td><?php echo $customer_name;?></td>
                                     <td><?php echo $customer_contact;?></td>
                                     <td><?php echo $customer_address;?></td>
-                                    <td><?php echo $customer_email;?></td>
+                                    <td><?php echo $customer_email1;?></td>
                                     <td><?php echo $qty;?></td>
                                     <td><?php echo $price;?></td>
                                     <td><?php echo $tot;?></td>
                                     <td ><?php echo $status;?></td>
 
                                     <td colspan="4">
-                                        <a class="btn btn-success" href="#" role="button">Update</a>
-                                        <a class="btn btn-danger" href="#" role="button">Delete</a>
+                                        <a class="btn btn-success" href="<?php echo SITE_URL;?>/admin/update-order.php?id=<?php echo $id;?>" role="button">Update</a>
+                                        <a class="btn btn-danger" href="<?php echo SITE_URL;?>/admin/delete-order.php?id=<?php echo $id;?>"  role="button">Delete</a>
                                     </td>
                                 </tr>
 
