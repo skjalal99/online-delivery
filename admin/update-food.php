@@ -30,14 +30,14 @@ if(isset($_GET['id']))
 
           $row  = mysqli_fetch_assoc($res);
 
-          echo  $id = $row['id'];
-          echo  $food_title = $row['title'];
-          echo  $food_descr = $row['descriptn'];
-          echo  $food_price = $row['price'];
-          echo  $food_cat = $row['category_id'];
-          echo  $food_curr_image = $row['img_name'];
-          echo  $food_featured = $row['featured'];
-          echo  $food_active = $row['active'];
+            $id = $row['id'];
+            $food_title = $row['title'];
+            $food_descr = $row['descriptn'];
+            $food_price = $row['price'];
+            $food_cat = $row['category_id'];
+            $food_curr_image = $row['img_name'];
+            $food_featured = $row['featured'];
+            $food_active = $row['active'];
 
 
         }

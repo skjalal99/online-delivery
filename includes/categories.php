@@ -28,7 +28,7 @@
             <div class="box-3 float-container">
                 <img src="<?php echo SITE_URL;?>/admin/assets/images/category/<?php echo $image;?>" alt="Pizza" class="img-responsive img-curve">
 
-                <h3 class="float-text text-white"><?php echo $title;?></h3>
+                <h3 class="float-text text-white text-center"><?php echo $title;?></h3>
             </div>
         </a>
 
